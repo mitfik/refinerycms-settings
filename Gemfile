@@ -2,10 +2,11 @@ source 'http://rubygems.org'
 
 gemspec
 
-gem 'refinerycms', :git => 'git://github.com/resolve/refinerycms.git'
+gem 'refinerycms', :git => 'git://github.com/refinery/refinerycms.git'
+gem 'refinerycms-i18n', :git => 'git://github.com/refinery/refinerycms-i18n.git'
 
 group :development, :test do
-  gem 'refinerycms-testing', :git => 'git://github.com/resolve/refinerycms.git'
+  gem 'refinerycms-testing', :git => 'git://github.com/refinery/refinerycms.git'
   gem 'guard-rspec', '~> 0.6.0'
 
   platforms :jruby do
@@ -28,9 +29,6 @@ group :development, :test do
   end
 
   platforms :ruby do
-    gem 'spork', '~> 0.9.0.rc'
-    gem 'guard-spork'
-
     unless ENV['TRAVIS']
       require 'rbconfig'
       if RbConfig::CONFIG['target_os'] =~ /darwin/i
